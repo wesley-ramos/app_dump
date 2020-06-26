@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  mysql:
+    build: .
+    container_name: app_dump
+    environment:
+      HOST: 127.0.0.1
+      USERNAME: root
+      PASSWORD: 123456
+    volumes:
+      - ./volumes/database:/app/database
+      - ./volumes/dump:/app/dump
+      - ./volumes/error:/app/error
+    network_mode: host
+    
